@@ -11,10 +11,19 @@ document.addEventListener('DOMContentLoaded', function() {
     let clockInTime = null;   
     let totalHours = 0;
 
-    // Navbar
+    // Navbar - handle both navigation and mobile collapse
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault(); 
+            
+            // Close mobile navbar if open
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
             
             document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active', 'bg-light', 'text-dark'));
             

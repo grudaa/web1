@@ -2,6 +2,21 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Custom navbar styles */
+.navbar-toggler {
+  border: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Mobile navbar brand stacking */
+.navbar-brand div {
+  line-height: 1.2;
+}
+
 /* Calendar styles */
 .calendar-grid,
 .schedule-grid {
@@ -92,16 +107,218 @@ body {
   z-index: 1051 !important;
 }
 
+/* Responsive styles */
+@media (max-width: 180px) {
+  /* Ultra-narrow screens - stack everything */
+  .container-fluid {
+    padding: 0.25rem !important;
+  }
+  
+  .navbar-brand {
+    font-size: 0.7rem !important;
+    line-height: 1.1;
+  }
+  
+  .navbar-brand div {
+    font-size: 0.7rem !important;
+    line-height: 1.1;
+  }
+  
+  .navbar-brand .fs-6 {
+    font-size: 0.6rem !important;
+  }
+  
+  .navbar-toggler {
+    padding: 0.1rem 0.2rem;
+    font-size: 0.6rem;
+  }
+  
+  .navbar-nav {
+    gap: 0.5rem !important;
+  }
+  
+  .nav-link {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.7rem;
+    text-align: right;
+  }
+  
+  .btn {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.7rem;
+  }
+  
+  /* Header section */
+  .bg-primary {
+    padding: 0.5rem !important;
+  }
+  
+  .bg-primary h2 {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .bg-primary p {
+    font-size: 0.6rem !important;
+  }
+  
+  /* Dashboard sections */
+  .dashboard-section {
+    padding: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .dashboard-section h2 {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Calendar - force single column */
+  .calendar-header,
+  .schedule-header {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .calendar-body,
+  .schedule-body {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .day-header {
+    padding: 0.25rem !important;
+    font-size: 0.6rem;
+  }
+  
+  .calendar-day,
+  .schedule-day {
+    min-height: 40px !important;
+    padding: 0.25rem !important;
+    font-size: 0.6rem;
+  }
+  
+  /* Forms - stack all form elements */
+  .row {
+    margin: 0 !important;
+  }
+  
+  .col-12,
+  .col-md-6 {
+    padding: 0 !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-label {
+    font-size: 0.7rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .form-control,
+  .form-select {
+    padding: 0.25rem !important;
+    font-size: 0.7rem;
+  }
+  
+  /* Tables - make them more compact */
+  .table th,
+  .table td {
+    padding: 0.25rem !important;
+    font-size: 0.6rem;
+    word-break: break-word;
+  }
+  
+  /* Buttons */
+  .btn-sm {
+    padding: 0.1rem 0.25rem !important;
+    font-size: 0.6rem;
+  }
+  
+  /* Modal adjustments */
+  .modal-dialog {
+    margin: 0.25rem !important;
+    max-width: calc(100vw - 0.5rem) !important;
+  }
+  
+  .modal-content {
+    font-size: 0.7rem;
+  }
+  
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 0.5rem !important;
+  }
+  
+  .modal-title {
+    font-size: 0.8rem;
+  }
+  
+  /* Hide non-essential elements on ultra-narrow screens */
+  .text-muted.small {
+    display: none !important;
+  }
+  
+  /* Time tracking section adjustments */
+  .display-5 {
+    font-size: 1rem !important;
+  }
+  
+  .badge {
+    font-size: 0.6rem !important;
+    padding: 0.2rem 0.4rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .day-header {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .calendar-day,
+  .schedule-day {
+    min-height: 60px;
+    padding: 0.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.1rem !important;
+  }
+}
+
 @media (max-width: 768px) {
-  /* calendar days vertical on small screens */
+  /* Stack calendar days vertically on small screens for better readability */
   .calendar-body,
   .schedule-body {
     grid-template-columns: 1fr;
   }
-
+  
   .calendar-day,
   .schedule-day {
     min-height: 80px;
-    padding: 0.25rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+    border-right: none;
+  }
+  
+  .calendar-day:last-child,
+  .schedule-day:last-child {
+    border-bottom: none;
+  }
+  
+  /* Mobile header adjustments */
+  .day-header {
+    padding: 0.75rem;
+  }
+  
+  /* Better mobile table experience */
+  .table-responsive {
+    border: none;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
   }
 }
