@@ -1,0 +1,107 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Calendar styles */
+.calendar-grid,
+.schedule-grid {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.calendar-header,
+.schedule-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #f8f9fa;
+}
+
+.day-header {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #495057;
+  border-right: 1px solid #dee2e6;
+}
+
+.calendar-body,
+.schedule-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day,
+.schedule-day {
+  min-height: 100px;
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.5rem;
+  background-color: white;
+}
+
+.calendar-day:last-child,
+.schedule-day:last-child {
+  border-right: none;
+}
+
+.day-number {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+/* Shift styling */
+
+.shift-type {
+  font-weight: 600;
+  display: block;
+}
+
+.shift-worker,
+.shift-time,
+.shift-hours {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.dashboard-section {
+  display: none;
+}
+
+.dashboard-section.active {
+  display: block;
+}
+
+.nav-link.active {
+  background-color: #e9ecef !important;
+  color: #212529 !important;
+}
+
+/* Modal in front */
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+
+.modal {
+  z-index: 1050 !important;
+}
+
+.modal-dialog {
+  z-index: 1051 !important;
+}
+
+@media (max-width: 768px) {
+  /* calendar days vertical on small screens */
+  .calendar-body,
+  .schedule-body {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-day,
+  .schedule-day {
+    min-height: 80px;
+    padding: 0.25rem;
+  }
+}
